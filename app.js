@@ -20,7 +20,8 @@ createApp({
             newTask: '',
             apiPost: 'storeTasks.php',
             apiGet: 'getTasks.php',
-            apiDelete: 'deleteTasks.php'
+            apiDelete: 'deleteTasks.php',
+            apiToggleDone: 'toggleDone.php'
         }
     },
     methods: {
@@ -43,12 +44,27 @@ createApp({
                 })
                 //TODO add empty v-model when newtask is generated
         },
-        toggleCompleted(task) {
-            if (task.done === true) {
+        toggleDone(index) {
+            /* if (task.done === true) {
                 task.done = false
             } else {
                 task.done = true
+            } */
+            const data = {
+                index
             }
+            axios.post(
+                this.apiToggleDone,
+                data,
+                {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                }).then(response => {
+                    //this.tasks = response.data
+                    console.log(response)
+                }).catch(error => {
+                    console.error(error.message)
+                })
+
         },
         deleteTask(index) {
 
@@ -61,8 +77,7 @@ createApp({
                 data,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
-                }
-                ).then(response => {
+                }).then(response => {
                     //console.log(response)
                     this.tasks = response.data
                 }).catch(error => {

@@ -56,15 +56,14 @@ createApp({
             const data = {
                 index
             }
-            axios.delete(
+            axios.post(
                 this.apiDelete,
+                data,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
-                },
-                data
+                }
                 ).then(response => {
-                    console.log(response)
-                    console.log(index)
+                    //console.log(response)
                     this.tasks = response.data
                 }).catch(error => {
                     console.error(error.message)

@@ -58,7 +58,6 @@ createApp({
                 }).catch(error => {
                     console.error(error.message)
                 })
-
         },
         deleteTask(index) {
 

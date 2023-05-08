@@ -20,8 +20,9 @@
         <div class="container">
             <h1 class="mt-4">ToDo List</h1>
             <div class="card my-4">
-                <ul class="list-unstyled mb-0">
-                    <li class="p-4 d-flex justify-content-between align-items-center" v-for="(task, index) in tasks"
+                <ul class="list-group list-group-flush">
+                    <li class="px-4 py-3 d-flex justify-content-between align-items-center list-group-item" 
+                        v-for="(task, index) in tasks"
                         :class="task.done ? 'done' : ''" 
                         @click="toggleDone(index)">
                         {{task.name}}
@@ -30,7 +31,9 @@
                         </div>
                     </li>
                 </ul>
+                <!-- /.list-group -->
             </div>
+            <!-- /.card -->
             <div class="input-group mb-3">
                 <span class="input-group-text" @click="addTask()">
                     +
@@ -38,6 +41,7 @@
                 <input type="text" class="form-control" placeholder="Add new task" v-model="newTask"
                     @keyup.enter="addTask(), newTask = ''">
             </div>
+            <!-- /.input-group-->
         </div>
     </div>
 

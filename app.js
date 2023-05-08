@@ -26,7 +26,6 @@ createApp({
     },
     methods: {
         addTask() {
-            //console.log('aggiunta nuova task')
             const data = {
                 newTask: this.newTask
             }
@@ -37,12 +36,10 @@ createApp({
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }).then(response => {
-                    //console.log(response)
                     this.tasks = response.data
                 }).catch(error => {
                     console.error(error.message)
                 })
-                //TODO add empty v-model when newtask is generated
         },
         toggleDone(index) {
             const data = {
@@ -71,7 +68,6 @@ createApp({
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }).then(response => {
-                    //console.log(response)
                     this.tasks = response.data
                 }).catch(error => {
                     console.error(error.message)
@@ -81,7 +77,6 @@ createApp({
     mounted() {
         axios.get(this.apiGet)
         .then(response => {
-            //console.log(response.data);
             this.tasks = response.data;
         })
         .catch(error => {

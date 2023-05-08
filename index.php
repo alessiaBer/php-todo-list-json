@@ -8,7 +8,9 @@
     <title>PHP ToDo List JSON</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
@@ -19,12 +21,12 @@
             <h1 class="mt-4">ToDo List</h1>
             <div class="card my-4">
                 <ul class="list-unstyled mb-0">
-                    <li class="p-4 d-flex justify-content-between align-items-center" 
-                    v-for="(task, index) in tasks" 
-                    :class="task.done ? 'done' : ''"
-                    @click="toggleCompleted(task)">
+                    <li class="p-4 d-flex justify-content-between align-items-center" v-for="(task, index) in tasks"
+                        :class="task.done ? 'done' : ''" @click="toggleCompleted(task)">
                         {{task.name}}
-                        <i class="fa-solid fa-trash-can" @click="deleteTask(index)"></i>
+                        <div class="delete" @click="deleteTask(index)">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </div>
                     </li>
                 </ul>
             </div>

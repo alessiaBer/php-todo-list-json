@@ -1,20 +1,25 @@
-<?php 
+<?php
 
-$tasksString = file_get_contents('tasks.json');
 
-//read json file
-$tasksString = file_get_contents('tasks.json');
-//convert into an associative array
-$tasksArray = json_decode($tasksString, true);
+if(isset($_DELETE["index"])) {
 
-array_splice($tasksArray, index, 1);
+    $index = intval($_DELETE["index"]);
 
-//transform back the string into a json
-$newTasksJSONString = json_encode($tasksArray);
-//replace the file content
-file_put_contents('tasks.json', $newTasksJSONString);
+    $tasksString = file_get_contents('tasks.json');
 
-header('Content-Type: application/json');
+    //read json file
+    $tasksString = file_get_contents('tasks.json');
+    //convert into an associative array
+    $tasksArray = json_decode($tasksString, true);
 
-echo $newTasksJSONString; 
-?>
+    array_splice($tasksArray, $index, 1);
+
+    //transform back the string into a json
+    $newTasksJSONString = json_encode($tasksArray);
+    //replace the file content
+    file_put_contents('tasks.json', $newTasksJSONString);
+
+    header('Content-Type: application/json');
+
+    echo $newTasksJSONString;
+}

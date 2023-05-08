@@ -51,10 +51,20 @@ createApp({
             }
         },
         deleteTask(index) {
-            axios.delete(this.apiDelete)
-            .then(response => {
-                console.log(response)
-            })
+
+            event.stopPropagation();
+            const data = {
+                index
+            }
+            axios.delete(
+                this.apiDelete,
+                data,
+                {
+                    headers: { 'Content-Type': 'multipart/form-data' }
+                })
+                .catch(error => {
+                    console.error(error.message)
+                })
         }
     },
     mounted() {

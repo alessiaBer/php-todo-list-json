@@ -20,11 +20,11 @@
             <div class="card my-4">
                 <ul class="list-unstyled mb-0">
                     <li class="p-4 d-flex justify-content-between align-items-center" 
-                    v-for="task in tasks" 
+                    v-for="(task, index) in tasks" 
                     :class="task.done ? 'done' : ''"
                     @click="toggleCompleted(task)">
                         {{task.name}}
-                        <i class="fa-solid fa-trash-can" @click="deleteTask(task)"></i>
+                        <i class="fa-solid fa-trash-can" @click="deleteTask(index)"></i>
                     </li>
                 </ul>
             </div>

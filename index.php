@@ -13,7 +13,18 @@
 <body>
 
     <div id="app">
-        <h1>ToDo List</h1>
+        <div class="container">
+           <h1>ToDo List</h1> 
+           <div class="card">
+            <div class="card-body">
+                <ul class="list-unstyled">
+                    <li v-for="task in tasks">
+                        {{task}}
+                    </li>
+                </ul>
+            </div>
+           </div>
+        </div>
     </div>
 
 

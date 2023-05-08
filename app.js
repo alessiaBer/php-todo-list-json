@@ -58,11 +58,15 @@ createApp({
             }
             axios.delete(
                 this.apiDelete,
-                data,
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
-                })
-                .catch(error => {
+                },
+                data
+                ).then(response => {
+                    console.log(response)
+                    console.log(index)
+                    this.tasks = response.data
+                }).catch(error => {
                     console.error(error.message)
                 })
         }

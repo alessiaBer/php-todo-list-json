@@ -24,7 +24,7 @@
             <div class="card my-4">
                 <ul class="list-unstyled mb-0">
                     <li v-for="task in tasks" class="p-3">
-                        {{task}}
+                        {{task.name}}
                     </li>
                 </ul>
             </div>

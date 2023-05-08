@@ -1,1 +1,26 @@
-["csdcsdcs","dfcsdsdv","dvsdvsd","Learn HTML","Learn CSS","Learn JS","Learn Vue","Learn PHP","Learn Laravel"]
+[
+    {
+        "name": "Learn HTML",
+        "done": false
+    },
+    {
+        "name": "Learn CSS",
+        "done": false
+    },
+    {
+        "name": "Learn JS",
+        "done": false
+    },
+    {
+        "name": "Learn Vue",
+        "done": false
+    },
+    {
+        "name": "Learn PHP",
+        "done": false
+    },
+    {
+        "name": "Learn Laravel",
+        "done": false
+    }
+]

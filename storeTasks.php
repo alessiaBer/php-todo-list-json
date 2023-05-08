@@ -1,7 +1,10 @@
 <?php 
 
 if (isset($_POST["newTask"])) {
-    $task = $_POST["newTask"];
+    $task = [
+        "name" => $_POST["newTask"],
+        "done" => false
+    ];
 
     //read json file
     $tasksString = file_get_contents('tasks.json');

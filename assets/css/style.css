@@ -4,3 +4,9 @@
 .done {
     text-decoration: line-through;
 }
+.fa-trash-can {
+    color: white;
+    background-color: red;
+    padding: 0.5rem;
+    border-radius: 5px;
+}

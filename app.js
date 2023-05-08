@@ -40,6 +40,13 @@ createApp({
                     console.error(error.message)
                 })
                 //TODO add empty v-model when newtask is generated
+        },
+        toggleCompleted(task) {
+            if (task.done === true) {
+                task.done = false
+            } else {
+                task.done = true
+            }
         }
     },
     mounted() {

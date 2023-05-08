@@ -45,11 +45,6 @@ createApp({
                 //TODO add empty v-model when newtask is generated
         },
         toggleDone(index) {
-            /* if (task.done === true) {
-                task.done = false
-            } else {
-                task.done = true
-            } */
             const data = {
                 index
             }
@@ -59,8 +54,7 @@ createApp({
                 {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 }).then(response => {
-                    //this.tasks = response.data
-                    console.log(response)
+                    this.tasks = response.data
                 }).catch(error => {
                     console.error(error.message)
                 })

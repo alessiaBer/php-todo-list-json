@@ -27,6 +27,5 @@ if(isset($_POST["index"])) {
 
     header('Content-Type: application/json');
 
-    /* echo $newTasksJSONString; */
     echo $newTasksJSONString;
 }

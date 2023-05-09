@@ -7,11 +7,12 @@ if(isset($_POST["index"])) {
     //convert into an associative array
     $tasksArray = json_decode($tasksString, true);
     // save in a variable the index of value of tasksArray
-    $numericIndexedArray = array_values($tasksArray);
+    /* $numericIndexedArray = array_values($tasksArray);
     //assign to a variable the position that have to change
     $task = $numericIndexedArray[$index];
-    
-    $task["done"] = !$task["done"];
+
+    $task["done"] = !$task["done"]; */
+    $tasksArray[$index]["done"] = !$tasksArray[$index]["done"];
 
 
     //transform back the string into a json

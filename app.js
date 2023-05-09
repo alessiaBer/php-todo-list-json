@@ -18,10 +18,10 @@ createApp({
         return {
             tasks: null,
             newTask: '',
-            apiPost: 'storeTasks.php',
-            apiGet: 'getTasks.php',
-            apiDelete: 'deleteTasks.php',
-            apiToggleDone: 'toggleDone.php'
+            apiPost: 'app/Http/Controllers/TaskController/store.php',
+            apiGet: 'app/Http/Controllers/TaskController/index.php',
+            apiDelete: 'app/Http/Controllers/TaskController/delete.php',
+            apiToggleDone: 'app/Http/Controllers/TaskController/toggle.php'
         }
     },
     methods: {
